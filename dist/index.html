@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102b37">
+  <meta name="description" content="המסע המשפחתי לפריז ודיסנילנד — כל יום, כל התוכניות וכל המסמכים במקום אחד.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>פריז, ביחד · המסע שלנו 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#daily-content">דילוג לתוכנית היום</a>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#day=2026-09-28" aria-label="פריז ביחד, תחילת הטיול"><span class="brand-mark">p.</span><span>פריז, ביחד<small>THE FAMILY EDITION</small></span></a>
+      <div class="side-label">המסע שלנו / 2026</div>
+      <nav id="primary-navigation" aria-label="ניווט ראשי"><button class="nav-button active" data-view="itinerary"><span aria-hidden="true">◷</span> יומן המסע</button><button class="nav-button" data-view="documents"><span aria-hidden="true">▤</span> תיק המסמכים <span class="nav-count">4</span></button></nav>
+      <div class="side-divider"></div>
+      <div class="side-label">שבעה אנשים. מסע אחד.</div>
+      <div class="family-list"><div><span class="avatar adult">ד</span><span>דן<small>41 · מדע ומכונות</small></span></div><div><span class="avatar adult">ס</span><span>סבא<small>62 · בקצב נוח</small></span></div><div><span class="avatar adult">מ</span><span>מירי<small>33 · זמן לשופינג</small></span></div><div><span class="avatar child">א</span><span>אריאל<small>11 · סקרנות בלי סוף</small></span></div><div><span class="avatar child">ט</span><span>טאי<small>7 · הרפתקאות</small></span></div><div><span class="avatar pink">ט</span><span>טוני<small>4 · קסמים קטנים</small></span></div><div><span class="avatar pink">ל</span><span>ליז<small>4 · קסמים קטנים</small></span></div></div>
+      <div class="side-foot"><span>TLV</span><span aria-hidden="true">✈</span><span>ORY</span><small>28 SEP — 07 OCT</small></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><span class="top-title">הטיול לפריז ודיסנילנד</span><span class="date-range" dir="ltr">28.09 — 07.10.2026</span><span class="private-badge">היומן המשפחתי</span></header>
+      <main id="main-content">
+        <section class="trip-cover" aria-label="פריז ודיסנילנד בסתיו"><img src="./assets/paris.jpg" alt="מגדל אייפל ונהר הסיין בין עצי הסתיו בפריז" width="4546" height="3031"><div class="cover-shade"></div><div class="cover-content"><span class="eyebrow">BONJOUR, LA FAMILLE!</span><h1>פריז, <span>ביחד.</span></h1><p>קצת קסם. הרבה סקרנות. כולנו כאן.</p><div class="cover-tags"><span>10 ימים</span><span>7 מטיילים</span><span>דיסני + פריז</span></div></div><span class="cover-stamp" aria-hidden="true">AUTUMN<br><b>20<br>26</b><br>PARIS, FRANCE</span></section>
+        <section id="itinerary-view">
+          <div class="section-intro"><h2>לאן היום?</h2><span>בוחרים יום, יוצאים לדרך.</span></div>
+          <nav id="day-navigation" class="day-navigation" aria-label="בחירת יום בטיול"></nav>
+          <div class="daily-toolbar"><div><span id="day-counter" class="eyebrow"></span><h2 id="day-title"></h2><p id="day-subtitle"></p></div><div class="traveler-control"><label for="traveler-filter">מי מטיילים?</label><select id="traveler-filter"><option value="all">כולם · 7 מטיילים</option><option value="dan">דן</option><option value="grandpa">סבא</option><option value="miri">מירי</option><option value="ariel">אריאל</option><option value="tai">טאי</option><option value="tony">טוני</option><option value="liz">ליז</option></select></div></div>
+          <div class="daily-grid"><section class="day-main"><div class="content-tabs" role="tablist" aria-label="פרטי היום"><button id="schedule-tab" role="tab" aria-selected="true" aria-controls="daily-content" data-tab="schedule">הלו״ז שלנו</button><button id="options-tab" role="tab" aria-selected="false" aria-controls="daily-content" tabindex="-1" data-tab="options">אפשר גם אחרת <span id="option-count"></span></button></div><div id="daily-content" role="tabpanel" aria-labelledby="schedule-tab" tabindex="-1"></div></section><aside id="day-details" class="day-details" aria-label="מידע ומסמכים ליום הנבחר"></aside></div>
+          <div class="day-pagination"><button id="previous-day">→ היום הקודם</button><span id="pagination-label"></span><button id="next-day">היום הבא ←</button></div>
+        </section>
+        <section id="documents-view" hidden><div class="section-intro"><h2>תיק המסמכים</h2><span>האישורים המקוריים, בהישג יד.</span></div><div id="document-library"></div></section>
+        <footer><span>פריז, ביחד · סתיו 2026</span><details><summary>על התכנון והמקורות</summary><p>מבוסס על יומן התכנון המצורף, אישור דיסני וצילומי הטיסות. לשיחה המקורית ב־Gemini לא הייתה גישה. שעות הפעילות נבדקו ב־10.9.2026; לוחות זמנים מוצעים אינם הזמנות. זמני הטיסות מקומיים לכל שדה.</p><p><a href="https://commons.wikimedia.org/wiki/File:Seine_and_Eiffel_Tower_in_Fall_in_2016.jpg" target="_blank" rel="noopener noreferrer">צילום: Anthony DELANOIX · CC0</a></p></details></footer>
+      </main>
+    </div>
+  </div>
+  <noscript>כדי לבחור ימים ולצפות בלו״ז יש להפעיל JavaScript בדפדפן. <a href="./documents/trip-planning.md">הורדת תוכנית הטיול</a></noscript>
+</body>
+</html>
