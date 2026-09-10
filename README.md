@@ -19,13 +19,9 @@ No dependency installation or build step is needed. All website files live in `d
 
 ## GitHub Pages deployment
 
-The Pages workflow is manually triggered. Public deployment has not been enabled or approved yet. This repository contains original travel documents and private booking details; a Pages deployment can expose those files even if the repository is private.
+Website: [Paris, together](https://bysdan42.github.io/paris-family-trip-2026/).
 
-After the owner explicitly approves the publication audience and content:
-
-1. Configure Settings → Pages → Source as GitHub Actions, on an eligible GitHub plan or public repository.
-2. Run the **Deploy trip site to GitHub Pages** workflow.
-3. Confirm the deployment succeeded before sharing its URL.
+Public publication of this site and its original travel documents was approved by the owner on September 10, 2026. GitHub Pages uses GitHub Actions. To publish updates, run the **Deploy trip site to GitHub Pages** workflow manually and confirm the deployment succeeds.
 
 ## Photo
 
