@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.mjs",
-    "check": "node --check dist/app.js && node --check dist/data.js"
+    "check": "node --check dist/app.js && node --check dist/data.js && node --check dist/app.ru.js && node --check dist/data.ru.js && node scripts/build-russian.mjs --check",
+    "build:ru": "node scripts/build-russian.mjs"
   }
 }

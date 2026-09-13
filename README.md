@@ -26,3 +26,11 @@ Public publication of this site and its original travel documents was approved b
 ## Photo
 
 The Paris photograph is by Anthony DELANOIX and distributed under CC0. [Original and license](https://commons.wikimedia.org/wiki/File:Seine_and_Eiffel_Tower_in_Fall_in_2016.jpg).
+
+## Russian edition
+
+`dist/ru.html` provides the complete Russian interface and itinerary. Both languages share styles and source documents. The language switch preserves the selected day, traveler, tab, route and document-library view.
+
+Update Hebrew itinerary text in `dist/data.js`, then add its Russian equivalent in `dist/locales/ru.json`. Interface and static-page translations live in `dist/locales/ui.ru.json`. Run `npm run build:ru` to regenerate `ru.html`, `app.ru.js` and `data.ru.js`; do not edit generated files directly. `npm run check` rejects missing translations and stale generated files. No extra dependencies are required.
+
+The Edgar booking update and its redacted PDF are prepared locally; public publication awaits the owner's approval requested in the conversation.

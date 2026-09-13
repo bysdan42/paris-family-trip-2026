@@ -1,5 +1,14 @@
 import { days, documents, travelers, relevantForTraveler, getEvents, resolveDayIndex } from './data.js';
-const state = {dayIndex:resolveDayIndex(location.hash),traveler:'all',tab:'schedule',view:'itinerary',octoberSecondPlan:'nature'};
+const parameters = new URLSearchParams(location.search);
+const initialTraveler = parameters.get('traveler');
+const state = {dayIndex:resolveDayIndex(location.hash),traveler:Object.hasOwn(travelers,initialTraveler)?initialTraveler:'all',tab:parameters.get('tab')==='options'?'options':'schedule',view:parameters.get('view')==='documents'?'documents':'itinerary',octoberSecondPlan:parameters.get('plan')==='disney'?'disney':'nature'};
+function updateLanguageLink(){
+ const link=document.getElementById('language-switch');
+ const destination=new URL(document.documentElement.lang==='ru'?'./index.html':'./ru.html',location.href);
+ destination.hash='day='+days[state.dayIndex].id;
+ for(const [key,value] of Object.entries({traveler:state.traveler,tab:state.tab,view:state.view,plan:state.octoberSecondPlan}))destination.searchParams.set(key,value);
+ link.href=destination.href;
+}
 const element = id => document.getElementById(id);
 const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 const externalLink = (url,label,className='event-link') => `<a class="${className}" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)} ↗</a>`;
@@ -28,6 +37,7 @@ function renderOptions(day){
  return `<div class="option-list">${options.length?options.map((option,index)=>`<article class="option-card"><span class="option-number">אפשרות ${String(index+1).padStart(2,'0')}</span><h3>${escapeHtml(option.title)}</h3><p>${escapeHtml(option.description)}</p><span class="group-tag">${escapeHtml(groupLabel(option.group))}</span>${option.url?externalLink(option.url,'מידע רשמי'):''}${option.plan?`<button class="choose-plan ${state.octoberSecondPlan===option.plan?'selected':''}" data-plan="${option.plan}" aria-pressed="${state.octoberSecondPlan===option.plan}">${state.octoberSecondPlan===option.plan?'✓ מוצג בלו״ז':'הצגת המסלול הזה בלו״ז'}</button>`:''}</article>`).join(''):'<p class="empty">אין חלופה נפרדת למטייל הזה ביום הנבחר. אפשר לבחור ״כולם״.</p>'}</div>`;
 }
 function renderDailyContent(){
+ updateLanguageLink();
  const day=days[state.dayIndex];
  element('day-counter').textContent=`יום ${String(state.dayIndex+1).padStart(2,'0')} מתוך 10 · ${day.weekday}, ${day.date}.2026`;
  element('day-title').textContent=day.title;
@@ -53,7 +63,7 @@ function selectDay(index){
 function renderLibrary(){
  element('document-library').innerHTML=`<div class="library-grid">${Object.entries(documents).map(([id,doc])=>`<article class="library-card"><span class="status">${doc.status}</span><h3>${doc.title}</h3><p>${doc.description}</p>${doc.reference?`<p class="reference">מספר הזמנה: <b dir="ltr">${doc.reference}</b></p>`:''}<div class="doc-actions">${id==='planning'?`<a class="action-link" href="${doc.path}" download>הורדת יומן התכנון</a>`:`<a class="action-link" href="${doc.path}" target="_blank" rel="noopener noreferrer">פתיחת המסמך ↗</a><a class="secondary-link" href="${doc.path}" download>הורדה למכשיר ↓</a>`}</div></article>`).join('')}</div><div class="library-notice"><strong>לתשומת לבכם · יתרת דיסני לפי המכתב</strong><p>במכתב מ־7.7.2026 רשומה יתרה של <b dir="ltr">$3,915.33</b> לתשלום עד <b dir="ltr">18.9.2026</b>. זהו מצב ההזמנה בעת הפקת המכתב; אין כאן מידע אם היתרה שולמה מאז. <a href="./documents/disney-confirmation.pdf#page=4" target="_blank" rel="noopener noreferrer">פתיחת עמוד התשלום ↗</a></p></div><section class="detail-card"><h3>מסמכים שעדיין לא צורפו</h3><p>אישור חניה ב־Edgar, השכרת רכב, העברות מאורלי ואליו, כרטיסי האייפל, שייט וכרטיסי מוזיאונים. היומן מציין אותם בימים הרלוונטיים.</p></section>`;
 }
-function setView(view){state.view=view;element('itinerary-view').hidden=view!=='itinerary';element('documents-view').hidden=view!=='documents';document.querySelectorAll('[data-view]').forEach(button=>{button.classList.toggle('active',button.dataset.view===view);if(button.dataset.view===view)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');});if(view==='documents')document.title='תיק המסמכים — פריז, ביחד';else renderDailyContent();}
+function setView(view){state.view=view;updateLanguageLink();element('itinerary-view').hidden=view!=='itinerary';element('documents-view').hidden=view!=='documents';document.querySelectorAll('[data-view]').forEach(button=>{button.classList.toggle('active',button.dataset.view===view);if(button.dataset.view===view)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');});if(view==='documents')document.title='תיק המסמכים — פריז, ביחד';else renderDailyContent();}
 element('day-navigation').addEventListener('click',event=>{const button=event.target.closest('[data-day]');if(button)selectDay(Number(button.dataset.day));});
 element('traveler-filter').addEventListener('change',event=>{state.traveler=event.target.value;renderDailyContent();});
 document.querySelector('.content-tabs').addEventListener('click',event=>{const button=event.target.closest('[data-tab]');if(button){state.tab=button.dataset.tab;renderDailyContent();}});
@@ -64,4 +74,5 @@ element('previous-day').addEventListener('click',()=>selectDay(state.dayIndex-1)
 element('next-day').addEventListener('click',()=>selectDay(state.dayIndex+1));
 window.addEventListener('hashchange',()=>{state.dayIndex=resolveDayIndex(location.hash);state.tab='schedule';setView('itinerary');renderDayNavigation();renderDailyContent();});
 document.querySelector('.brand').addEventListener('click',()=>{setView('itinerary');selectDay(0);});
-renderDayNavigation();renderDailyContent();renderLibrary();
+element('traveler-filter').value=state.traveler;
+renderDayNavigation();renderDailyContent();renderLibrary();setView(state.view);

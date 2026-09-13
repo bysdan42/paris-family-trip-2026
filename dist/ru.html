@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102b37">
+  <meta name="description" content="Семейная поездка в Париж и Диснейленд — программа каждого дня и все документы в одном месте.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Париж, вместе · Наше путешествие 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.ru.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#daily-content">Перейти к программе дня</a>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#day=2026-09-28" aria-label="Париж вместе, начало поездки"><span class="brand-mark">p.</span><span>Париж, вместе<small>THE FAMILY EDITION</small></span></a>
+      <div class="side-label">НАШЕ ПУТЕШЕСТВИЕ / 2026</div>
+      <nav id="primary-navigation" aria-label="Основная навигация"><button class="nav-button active" data-view="itinerary"><span aria-hidden="true">◷</span> План поездки</button><button class="nav-button" data-view="documents"><span aria-hidden="true">▤</span> Документы <span class="nav-count">5</span></button></nav>
+      <div class="side-divider"></div>
+      <div class="side-label">СЕМЕРО. ОДНО ПУТЕШЕСТВИЕ.</div>
+      <div class="family-list"><div><span class="avatar adult">Д</span><span>Дан<small>41 · наука и техника</small></span></div><div><span class="avatar adult">Д</span><span>Дедушка<small>62 · без спешки</small></span></div><div><span class="avatar adult">М</span><span>Мири<small>33 · время для покупок</small></span></div><div><span class="avatar child">А</span><span>Ариэль<small>11 · бесконечное любопытство</small></span></div><div><span class="avatar child">Т</span><span>Тай<small>7 · приключения</small></span></div><div><span class="avatar pink">Т</span><span>Тони<small>4 · маленькие чудеса</small></span></div><div><span class="avatar pink">Л</span><span>Лиз<small>4 · маленькие чудеса</small></span></div></div>
+      <div class="side-foot"><span>TLV</span><span aria-hidden="true">✈</span><span>ORY</span><small>28 SEP — 07 OCT</small></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><span class="top-title">Париж и Диснейленд</span><span class="date-range" dir="ltr">28.09 — 07.10.2026</span><span class="private-badge">Семейный дневник</span><a id="language-switch" class="language-switch" href="./index.html" lang="he" hreflang="he" aria-label="Switch to Hebrew">&#1506;&#1489;&#1512;&#1497;&#1514; <span aria-hidden="true">↗</span></a></header>
+      <main id="main-content">
+        <section class="trip-cover" aria-label="Париж и Диснейленд осенью"><img src="./assets/paris.jpg" alt="Эйфелева башня и Сена среди осенних деревьев Парижа" width="4546" height="3031"><div class="cover-shade"></div><div class="cover-content"><span class="eyebrow">BONJOUR, LA FAMILLE!</span><h1>Париж, <span>вместе.</span></h1><p>Немного магии. Много открытий. Все вместе.</p><div class="cover-tags"><span>10 дней</span><span>7 путешественников</span><span>Disney + Париж</span></div></div><span class="cover-stamp" aria-hidden="true">AUTUMN<br><b>20<br>26</b><br>PARIS, FRANCE</span></section>
+        <section id="itinerary-view">
+          <div class="section-intro"><h2>Куда сегодня?</h2><span>Выбираем день — и в путь.</span></div>
+          <nav id="day-navigation" class="day-navigation" aria-label="Выбрать день поездки"></nav>
+          <div class="daily-toolbar"><div><span id="day-counter" class="eyebrow"></span><h2 id="day-title"></h2><p id="day-subtitle"></p></div><div class="traveler-control"><label for="traveler-filter">Кто идёт?</label><select id="traveler-filter"><option value="all">Все · 7 человек</option><option value="dan">Дан</option><option value="grandpa">Дедушка</option><option value="miri">Мири</option><option value="ariel">Ариэль</option><option value="tai">Тай</option><option value="tony">Тони</option><option value="liz">Лиз</option></select></div></div>
+          <div class="daily-grid"><section class="day-main"><div class="content-tabs" role="tablist" aria-label="Подробности дня"><button id="schedule-tab" role="tab" aria-selected="true" aria-controls="daily-content" data-tab="schedule">Наша программа</button><button id="options-tab" role="tab" aria-selected="false" aria-controls="daily-content" tabindex="-1" data-tab="options">Другие варианты <span id="option-count"></span></button></div><div id="daily-content" role="tabpanel" aria-labelledby="schedule-tab" tabindex="-1"></div></section><aside id="day-details" class="day-details" aria-label="Информация и документы выбранного дня"></aside></div>
+          <div class="day-pagination"><button id="previous-day">← Предыдущий день</button><span id="pagination-label"></span><button id="next-day">Следующий день →</button></div>
+        </section>
+        <section id="documents-view" hidden><div class="section-intro"><h2>Документы</h2><span>Подтверждения под рукой. Документы — на языке оригинала.</span></div><div id="document-library"></div></section>
+        <footer><span>Париж, вместе · Осень 2026</span><details><summary>О плане и источниках</summary><p>На основе исходного плана, подтверждений проживания и снимков рейсов. Доступа к исходному разговору в Gemini не было. Часы работы проверены 10.9.2026; предложенная программа не означает бронирование. Время рейсов местное для каждого аэропорта.</p><p><a href="https://commons.wikimedia.org/wiki/File:Seine_and_Eiffel_Tower_in_Fall_in_2016.jpg" target="_blank" rel="noopener noreferrer">Фото: Anthony DELANOIX · CC0</a></p></details></footer>
+      </main>
+    </div>
+  </div>
+  <noscript>Для выбора дня и просмотра программы включите JavaScript в браузере. <a href="./documents/trip-planning.md">Скачать план поездки</a></noscript>
+</body>
+</html>
