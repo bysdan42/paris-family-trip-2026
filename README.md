@@ -33,4 +33,4 @@ The Paris photograph is by Anthony DELANOIX and distributed under CC0. [Original
 
 Update Hebrew itinerary text in `dist/data.js`, then add its Russian equivalent in `dist/locales/ru.json`. Interface and static-page translations live in `dist/locales/ui.ru.json`. Run `npm run build:ru` to regenerate `ru.html`, `app.ru.js` and `data.ru.js`; do not edit generated files directly. `npm run check` rejects missing translations and stale generated files. No extra dependencies are required.
 
-The Edgar booking update and its redacted PDF are prepared locally; public publication awaits the owner's approval requested in the conversation.
+The owner approved public publication of both language editions, the Edgar booking details and the redacted confirmation PDF on September 13, 2026.
