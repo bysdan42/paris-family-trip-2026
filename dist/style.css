@@ -9,3 +9,5 @@ html[lang=ru] body{font-family:"Trebuchet MS",sans-serif}html[lang=ru] .cover-sh
 @media(max-width:700px){.topbar{height:auto;min-height:54px;flex-wrap:wrap;padding-block:9px;gap:7px 12px}.date-range{margin-inline-start:auto}.language-switch{margin-inline-start:auto}html[lang=ru] .cover-content h1{font-size:2.6rem;line-height:1.15}html[lang=ru] .cover-content p{max-width:290px;line-height:1.5}html[lang=ru] .daily-grid{display:flex}html[lang=ru] .event{grid-template-columns:69px minmax(0,1fr)}html[lang=ru] .content-tabs{gap:18px}html[lang=ru] .nav-button{font-size:.78rem}html[lang=ru] .brand{font-size:1.05rem;white-space:normal}html[lang=ru] .day-pagination button{font-size:.72rem;padding:9px 8px}html[lang=ru] .flight-footer{flex-wrap:wrap}html[lang=ru] .cover-tags{flex-wrap:wrap;gap:6px}html[lang=ru] .daily-toolbar h2{max-width:100%}.event-meta{overflow-wrap:anywhere}}
 
 @media(max-width:700px){html[lang=ru] .trip-cover{height:auto;min-height:250px}}
+
+.baggage-card{border-top:3px solid var(--blue)}.baggage-total{display:block;color:var(--blue);font-size:1.2rem;margin-bottom:16px}.baggage-library{margin-top:20px}.baggage-card .detail-row p{margin-top:6px}
